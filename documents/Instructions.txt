@@ -1,0 +1,2 @@
+1. Configure your database connection and create it ( php app/console doctrine:database:create)
+2. Create a BlogBundle ( php app/console generate:bundle )

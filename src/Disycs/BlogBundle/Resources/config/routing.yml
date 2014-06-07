@@ -1,0 +1,3 @@
+disycs_blog_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: DisycsBlogBundle:Default:index }

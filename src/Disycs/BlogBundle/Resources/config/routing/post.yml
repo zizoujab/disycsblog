@@ -1,0 +1,30 @@
+crudpost:
+    pattern:  /
+    defaults: { _controller: "DisycsBlogBundle:Post:index" }
+
+crudpost_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "DisycsBlogBundle:Post:show" }
+
+crudpost_new:
+    pattern:  /new
+    defaults: { _controller: "DisycsBlogBundle:Post:new" }
+
+crudpost_create:
+    pattern:  /create
+    defaults: { _controller: "DisycsBlogBundle:Post:create" }
+    requirements: { _method: post }
+
+crudpost_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "DisycsBlogBundle:Post:edit" }
+
+crudpost_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "DisycsBlogBundle:Post:update" }
+    requirements: { _method: post|put }
+
+crudpost_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "DisycsBlogBundle:Post:delete" }
+    requirements: { _method: post|delete }

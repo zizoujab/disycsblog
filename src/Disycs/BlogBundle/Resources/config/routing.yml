@@ -4,3 +4,7 @@ disycs_blog_homepage:
 disycs_blog_show_post:
     pattern:  /show/{id}
     defaults: { _controller: DisycsBlogBundle:Default:show }
+
+DisycsBlogBundle_crudpost:
+    resource: "@DisycsBlogBundle/Resources/config/routing/post.yml"
+    prefix:   /crudpost

@@ -12,3 +12,15 @@
   link the entities together 
      Tag with post -> bidiretional manyToMany relationship
      Category with post -> bidirectional oneToMany relationship 
+     for more infos refer to this link http://doctrine-orm.readthedocs.org/en/latest/reference/working-with-associations.html
+
+verify that you havent done something wrong with the command php/app console doctrine:mapping:info
+
+now generate getters and setter for the new added fields (php app/console doctrine:generate:entities DisycsBlogBundle )
+this command should generate getters and setters with other methods and __construct method too . the older version of entities have the same name ending with tild
+
+4. Now let's add some data to our database with fixtures !
+follow this tutorial to install the bundle : 
+http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
+
+

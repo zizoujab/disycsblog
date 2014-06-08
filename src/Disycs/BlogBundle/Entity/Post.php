@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table()
  * @ORM\Entity
+ * @ORM\HasLifecycleCallbacks()
  */
 class Post
 {
@@ -50,13 +51,13 @@ class Post
     private $updatedAt;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Category", inversedBy="user" )
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="user", cascade="persist" )
      */
     
     private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts")
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="posts" ,cascade="persist" )
      */
     private $tags;
 
@@ -225,5 +226,22 @@ class Post
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function setCreatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
+        $this->createdAt = new \DateTime();
+    }
+
+    /**
+     * @ORM\PreUpdate
+     */
+    public function setUpdatedAtValue()
+    {
+        $this->updatedAt = new \DateTime();
     }
 }

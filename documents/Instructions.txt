@@ -1,2 +1,14 @@
 1. Configure your database connection and create it ( php app/console doctrine:database:create)
-2. Create a BlogBundle ( php app/console generate:bundle )
+2. Create a BlogBundle ( php app/console generate:bundle ) chose yml as configuration and answer no when it asks you to gnerate the holse bundle directory , leave the rest as default.
+3. Create Model classes ( class diagram is in documents/class_diagram.JPG)
+   Command for creating class : php/app console doctrine:generate:entity
+   For Category entity for example you will fill those options: 
+      name : DisycsBlogBundle:Category
+      Format: annotation
+   and then add the fields and their types ( name of type string and text of type string)
+      generate empty repository  chose as you like
+
+  do the same for Tag and Post entities
+  link the entities together 
+     Tag with post -> bidiretional manyToMany relationship
+     Category with post -> bidirectional oneToMany relationship 

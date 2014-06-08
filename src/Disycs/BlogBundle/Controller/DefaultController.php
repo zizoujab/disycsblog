@@ -11,4 +11,10 @@ class DefaultController extends Controller
     	$posts = $this->get('doctrine')->getRepository('DisycsBlogBundle:Post')->findAll();
         return $this->render('DisycsBlogBundle:Default:index.html.twig',array('posts'=>$posts));
     }
+
+    public function showAction($id)
+    {
+    	$post = $this->get('doctrine')->getRepository('DisycsBlogBundle:Post')->find($id);
+        return $this->render('DisycsBlogBundle:Default:post.html.twig',array('post'=>$post));
+    }
 }

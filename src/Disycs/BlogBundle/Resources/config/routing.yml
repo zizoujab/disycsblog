@@ -1,3 +1,6 @@
 disycs_blog_homepage:
     pattern:  /
     defaults: { _controller: DisycsBlogBundle:Default:index }
+disycs_blog_show_post:
+    pattern:  /show/{id}
+    defaults: { _controller: DisycsBlogBundle:Default:show }

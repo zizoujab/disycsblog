@@ -1,12 +1,5 @@
-1. you have a template of a blog in documents/bootstrap-blog-template.zip , extract it 
-2. copy the content if index.html and paste it in new file app/Resourses/layout.html.twig
-3. remove everything from the  body tag  except <footer> and <header> tags and add a content blog
-4. move the blog.css to web/css folder  and lib folder into web folder
-5. chnge the way we reference js and css files using assetic
- http://symfony.com/doc/current/cookbook/assetic/asset_management.html
-
-6. now go to src/Disycs/BlogBundle/Resources/view/Default/index.html.twig and extend the default layout.html.twig template
-test your code.
-
-7. let's get some data, go to DefaultController and load some data
-8. display the data in the view
+links are not working !!!!
+take a look at routing : http://symfony.com/doc/current/book/routing.html
+1. add a method in default controller to display a single post
+2. add param in the routing too
+3. link theem together  by adding post.html.twig to default folter, getting a single post ....

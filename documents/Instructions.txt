@@ -1,26 +1,12 @@
-1. Configure your database connection and create it ( php app/console doctrine:database:create)
-2. Create a BlogBundle ( php app/console generate:bundle ) chose yml as configuration and answer no when it asks you to gnerate the holse bundle directory , leave the rest as default.
-3. Create Model classes ( class diagram is in documents/class_diagram.JPG)
-   Command for creating class : php/app console doctrine:generate:entity
-   For Category entity for example you will fill those options: 
-      name : DisycsBlogBundle:Category
-      Format: annotation
-   and then add the fields and their types ( name of type string and text of type string)
-      generate empty repository  chose as you like
+1. you have a template of a blog in documents/bootstrap-blog-template.zip , extract it 
+2. copy the content if index.html and paste it in new file app/Resourses/layout.html.twig
+3. remove everything from the  body tag  except <footer> and <header> tags and add a content blog
+4. move the blog.css to web/css folder  and lib folder into web folder
+5. chnge the way we reference js and css files using assetic
+ http://symfony.com/doc/current/cookbook/assetic/asset_management.html
 
-  do the same for Tag and Post entities
-  link the entities together 
-     Tag with post -> bidiretional manyToMany relationship
-     Category with post -> bidirectional oneToMany relationship 
-     for more infos refer to this link http://doctrine-orm.readthedocs.org/en/latest/reference/working-with-associations.html
+6. now go to src/Disycs/BlogBundle/Resources/view/Default/index.html.twig and extend the default layout.html.twig template
+test your code.
 
-verify that you havent done something wrong with the command php/app console doctrine:mapping:info
-
-now generate getters and setter for the new added fields (php app/console doctrine:generate:entities DisycsBlogBundle )
-this command should generate getters and setters with other methods and __construct method too . the older version of entities have the same name ending with tild
-
-4. Now let's add some data to our database with fixtures !
-follow this tutorial to install the bundle : 
-http://symfony.com/doc/current/bundles/DoctrineFixturesBundle/index.html
-
-
+7. let's get some data, go to DefaultController and load some data
+8. display the data in the view

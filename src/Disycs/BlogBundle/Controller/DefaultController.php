@@ -6,8 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('DisycsBlogBundle:Default:index.html.twig', array('name' => $name));
+    	$posts = $this->get('doctrine')->getRepository('DisycsBlogBundle:Post')->findAll();
+        return $this->render('DisycsBlogBundle:Default:index.html.twig',array('posts'=>$posts));
     }
 }
